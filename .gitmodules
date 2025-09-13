@@ -1,0 +1,3 @@
+[submodule "packages/pro-blocks"]
+	path = packages/pro-blocks
+	url = https://github.com/Everyday-Money-Movement/pro-blocks-private.git
