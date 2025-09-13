@@ -1,6 +1,6 @@
 "use client"
 
-import { ProFooter3 } from "@/components/problocks/footer-3";
+import { Footer3 } from "@/components/pro-blocks/landing-page/footers/footer-3";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -12,6 +12,6 @@ const navItems = [
 ];
 
 export function Footer() {
-  return <ProFooter3 items={navItems} />;
+  return <Footer3 items={navItems} />;
 }
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { ProNavbar } from "@/components/problocks/navbar";
+import { Navbar1 } from "@/components/pro-blocks/application/navbars/navbar-1";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -12,6 +12,6 @@ const navItems = [
 ];
 
 export function Header() {
-  return <ProNavbar items={navItems} className="justify-center" />;
+  return <Navbar1 items={navItems} className="justify-center" />;
 }
 

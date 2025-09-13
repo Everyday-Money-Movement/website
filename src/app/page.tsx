@@ -1,8 +1,8 @@
-import { ProRichText1 } from "@/components/problocks/rich-text-section-1";
+import { RichTextSection1 } from "@/components/pro-blocks/landing-page/rich-text-sections/rich-text-section-1";
 
 export default function Home() {
   return (
-    <ProRichText1
+    <RichTextSection1
       title="Manifesto"
       content="## Placeholder\n\nContent coming soon."
     />
