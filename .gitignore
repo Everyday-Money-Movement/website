@@ -41,4 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 # Keep shadcn design Pro Blocks SOURCE out of public repo
-packages/pro-blocks/
+packages/pro-blocks/*
+!packages/pro-blocks/package.json
