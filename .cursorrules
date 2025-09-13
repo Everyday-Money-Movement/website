@@ -1,0 +1,27 @@
+# .cursorrules
+project_name: Everyday Money Movement
+goals:
+  - Next.js App Router + TypeScript + Tailwind v4 + shadcn/ui
+  - Blog + MDX + multi-author front-matter
+  - "Live on Bitcoin" interactive map → /live/[country]
+  - Keep shadcndesign Pro Blocks SOURCE out of public repo
+guardrails:
+  - Do not copy any code from packages/pro-blocks into the public repo
+  - Use default shadcn tokens; no custom brand tokens yet
+  - No analytics, no external scripts
+  - A11y: keyboard focus, aria labels; respect prefers-reduced-motion
+conventions:
+  - Content in /content/{blog|countries}; authors in /content/authors
+  - Flat blog slugs: /blog/slug
+  - Use existing file tree; keep components small and composable
+tasks:
+  - Wire MDX loaders and blog index
+  - Build /live map with react-simple-maps + world-atlas
+  - Add 5 country pages (PL, US, DE, SV, CR)
+  - Create CI workflow (typecheck + build)
+notes:
+  - If unsure, propose a plan before modifying many files
+  - Prefer shadcn/ui primitives; keep classNames minimal
+
+
+
