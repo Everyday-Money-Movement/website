@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@everydaymoney/pro-blocks':
+        specifier: workspace:*
+        version: link:packages/pro-blocks
       '@hookform/resolvers':
         specifier: ^5.2.1
         version: 5.2.1(react-hook-form@7.62.0(react@19.1.0))
@@ -156,6 +159,16 @@ importers:
       typescript:
         specifier: ^5
         version: 5.9.2
+
+  packages/pro-blocks:
+    dependencies:
+      react:
+        specifier: ^19.1.0
+        version: 19.1.0
+    devDependencies:
+      '@types/react':
+        specifier: ^19
+        version: 19.1.13
 
 packages:
 
