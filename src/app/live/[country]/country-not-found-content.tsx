@@ -30,7 +30,7 @@ export function CountryNotFoundContent() {
           .join(' ');
       }
     }
-  } catch (error) {
+  } catch {
     // If there's any error, use default
     countryName = "this country";
   }
