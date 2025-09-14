@@ -21,7 +21,6 @@ const eslintConfig = [
     ],
   },
   {
-    files: ["src/components/pro-blocks/**/*.tsx"],
     rules: {
       "react/no-unescaped-entities": "off",
     },

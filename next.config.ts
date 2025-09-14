@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
+import { withContentlayer } from "next-contentlayer";
 
 // next.config.ts
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: "standalone",
   reactStrictMode: true,
   transpilePackages: ["@everydaymoney/pro-blocks"],
 };
 
-export default nextConfig;
+export default withContentlayer(nextConfig);
 

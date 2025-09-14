@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: Everyday-Money-Movement/website
+  branch: main
+  auth_scope: repo
+media_folder: public/images/uploads
+public_folder: /images/uploads
+collections:
+  - name: blog
+    label: Blog
+    folder: content/blog
+    format: frontmatter
+    extension: mdx
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Description, widget: text }
+      - { name: date, label: Date, widget: datetime }
+      - { name: author, label: Author, widget: string }
+      - { name: body, label: Body, widget: markdown }
