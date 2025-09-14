@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar1() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ export function Navbar1() {
 
       {/* Mobile menu toggle area */}
       <div className="absolute right-4 flex items-center">
-        {/* Empty space for balance */}
+        <ThemeToggle />
       </div>
     </div>
   );
@@ -101,9 +102,12 @@ export function Navbar1() {
               <Logo />
             </Link>
           </div>
-          {/* Right section: Navigation items */}
+          {/* Right section: Navigation items and theme toggle */}
           <div className="flex items-center gap-x-1">
             <NavItems />
+            <div className="ml-4">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </nav>
