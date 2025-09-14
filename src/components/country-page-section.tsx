@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { RichTextSection4 } from "@/components/pro-blocks/landing-page/rich-text-sections/rich-text-section-4";
 import { AppLink } from "@/components/app-link";
 import { CountryData } from "@/lib/country-data";
 
@@ -8,20 +10,30 @@ interface CountryPageSectionProps {
 }
 
 export function CountryPageSection({ data }: CountryPageSectionProps) {
-  return (
-    <section className="container mx-auto py-8">
-      <header className="mb-10 text-center">
-        <h1 className="text-3xl font-bold mb-2">{data.title}</h1>
-        <p className="text-muted-foreground">{data.subtitle}</p>
-        {data.imageUrl && (
-          <img
-            src={data.imageUrl}
-            alt=""
-            className="mx-auto mt-6 rounded-md object-cover"
-          />
-        )}
-      </header>
+  const [activeSection, setActiveSection] = useState("general-info");
 
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    setActiveSection(targetId);
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <RichTextSection4
+      title={data.title}
+      subtitle={data.subtitle}
+      imageUrl={data.imageUrl}
+      tableOfContents={data.tableOfContents}
+      onScroll={handleScroll}
+      activeSection={activeSection}
+    >
       {/* General Info Section */}
       <section id="general-info" className="mb-12">
         <h2 className="text-2xl font-bold mb-4">General Info</h2>
@@ -68,6 +80,6 @@ export function CountryPageSection({ data }: CountryPageSectionProps) {
           {data.content.directPayments}
         </p>
       </section>
-    </section>
+    </RichTextSection4>
   );
 }
