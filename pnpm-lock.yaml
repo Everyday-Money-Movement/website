@@ -160,15 +160,7 @@ importers:
         specifier: ^5
         version: 5.9.2
 
-  packages/pro-blocks:
-    dependencies:
-      react:
-        specifier: ^19.1.0
-        version: 19.1.0
-    devDependencies:
-      '@types/react':
-        specifier: ^19
-        version: 19.1.13
+  packages/pro-blocks: {}
 
 packages:
 

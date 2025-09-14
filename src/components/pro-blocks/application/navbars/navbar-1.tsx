@@ -2,7 +2,6 @@
 
 import { Logo } from "@/components/pro-blocks/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
-import { ChevronDown, Menu, Zap, Search, X } from "lucide-react";
+import { Menu, Zap, Search, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -50,8 +49,9 @@ export function Navbar1() {
       </Button>
 
       {/* Logo */}
-
-      <Logo className="absolute left-1/2 h-8 w-8 -translate-x-1/2 transform" />
+      <Link href="/" className="absolute left-1/2 h-8 w-8 -translate-x-1/2 transform">
+        <Logo className="h-8 w-8" />
+      </Link>
 
       {/* Mobile search and button */}
       <div className="absolute right-4 flex items-center gap-3">
@@ -67,9 +67,6 @@ export function Navbar1() {
 
   // Navigation items component
   const NavItems = ({ isMobile = false }) => {
-    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-
-    const toggleSettings = () => setIsSettingsOpen(!isSettingsOpen);
 
     const linkClasses = `font-medium ${isMobile ? "text-base" : "text-sm"} ${
       isMobile
@@ -81,84 +78,28 @@ export function Navbar1() {
       <>
         {/* Main navigation links */}
         <Link
-          href="#"
+          href="/"
           className={`${linkClasses} ${
             isMobile ? "text-primary" : "text-primary"
           }`}
         >
-          Dashboard
+          Manifesto
         </Link>
-        <Link href="#" className={`${linkClasses} flex gap-2`}>
-          Orders
-          <Badge className="flex h-5 w-5 items-center justify-center p-0 text-xs">
-            2
-          </Badge>
+        <Link href="/medium-of-exchange" className={linkClasses}>
+          Medium of Exchange
         </Link>
-        <Link href="#" className={linkClasses}>
-          Products
+        <Link href="/live" className={linkClasses}>
+          Live on Bitcoin
         </Link>
         <Link href="#" className={linkClasses}>
-          Customers
+          SPEDN Wall
         </Link>
-        {/* Settings dropdown or expandable section */}
-        {isMobile ? (
-          <div>
-            {/* Mobile settings expandable section */}
-            <button
-              onClick={toggleSettings}
-              className={`w-full text-left ${linkClasses} flex items-center justify-between`}
-            >
-              Settings
-              <ChevronDown
-                className={`h-5 w-5 transition-transform ${
-                  isSettingsOpen ? "rotate-180 transform" : ""
-                }`}
-              />
-            </button>
-            {isSettingsOpen && (
-              <div className="mt-1 ml-3 space-y-1">
-                {/* Mobile settings sub-items */}
-                <Link
-                  href="#"
-                  className="text-muted-foreground block rounded-md px-3 py-2 text-base font-medium"
-                >
-                  General
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground block rounded-md px-3 py-2 text-base font-medium"
-                >
-                  Security
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground block rounded-md px-3 py-2 text-base font-medium"
-                >
-                  API
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground block rounded-md px-3 py-2 text-base font-medium"
-                >
-                  Advanced
-                </Link>
-              </div>
-            )}
-          </div>
-        ) : (
-          // Desktop settings dropdown
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center ${linkClasses}`}>
-              Settings <ChevronDown className="ml-1 h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>General</DropdownMenuItem>
-              <DropdownMenuItem>Security</DropdownMenuItem>
-              <DropdownMenuItem>API</DropdownMenuItem>
-              <DropdownMenuItem>Advanced</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        )}
+        <Link href="#" className={linkClasses}>
+          Blog
+        </Link>
+        <Link href="#" className={linkClasses}>
+          Contribute
+        </Link>
       </>
     );
   };
@@ -170,7 +111,9 @@ export function Navbar1() {
         <div className="container mx-auto flex h-full items-center justify-between px-6">
           {/* Left section: Logo and navigation items */}
           <div className="flex items-center gap-x-4">
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
             <div className="flex items-center gap-x-1">
               <NavItems />
             </div>

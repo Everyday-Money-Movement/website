@@ -25,34 +25,40 @@ export function Footer3() {
             aria-label="Footer navigation"
           >
             <Link
-              href="#"
+              href="/"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              Home
+              Manifesto
+            </Link>
+            <Link
+              href="/medium-of-exchange"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Medium of Exchange
+            </Link>
+            <Link
+              href="/live"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Live on Bitcoin
             </Link>
             <Link
               href="#"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              About Us
+              SPEDN Wall
             </Link>
             <Link
               href="#"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              Services
+              Blog
             </Link>
             <Link
               href="#"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              Contact Us
-            </Link>
-            <Link
-              href="#"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              FAQ
+              Contribute
             </Link>
           </nav>
 
