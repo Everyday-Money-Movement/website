@@ -73,6 +73,24 @@ export function CountryPageSection({ data }: CountryPageSectionProps) {
         </div>
       </section>
 
+      {/* Individual App Category Sections */}
+      {data.appCategories.map((category, index) => (
+        <section key={`category-${index}`} id={category.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')} className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">{category.title}</h2>
+          <div className="space-y-2">
+            {category.apps.map((app, appIndex) => (
+              <AppLink
+                key={appIndex}
+                name={app.name}
+                description={app.description}
+                url={app.url}
+                imageUrl={app.imageUrl}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
+
       {/* Direct Payments Section */}
       <section id="direct-payments" className="mb-12">
         <h2 className="text-2xl font-bold mb-4">Direct Payments</h2>

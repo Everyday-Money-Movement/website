@@ -3,21 +3,35 @@ import { CountryData } from "../country-data";
 export const polandData: CountryData = {
   code: "PL",
   name: "Poland",
-  title: "Live on Bitcoin — Poland",
-  subtitle: "Bitcoin is legal in Poland. You can buy, sell, and use it freely. Here's how to live on Bitcoin in Poland.",
+  title: "Live on Bitcoin in Poland",
+  subtitle: "As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's foolishness get him down: a court jester.",
   imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop",
   tableOfContents: [
     { label: "General Info", href: "#general-info" },
     { label: "Taxation", href: "#taxation" },
     { label: "Apps & Services", href: "#apps-services" },
     { label: "Direct payments", href: "#direct-payments" },
+    { label: "Online shops & services", href: "#online-shops-services" },
+    { label: "Exchanges", href: "#exchanges" },
+    { label: "Fintech apps", href: "#fintech-apps" },
+    { label: "Peer-to-peer", href: "#peer-to-peer" },
   ],
   content: {
-    generalInfo: "Bitcoin is legal in Poland. You can buy, sell, and use it freely. The Polish government has clarified that Bitcoin is not considered legal tender, but it's not illegal to use it as a means of payment. The Polish Financial Supervision Authority (KNF) has issued guidelines for cryptocurrency businesses, but individuals can use Bitcoin without restrictions.",
-    taxation: "In Poland, Bitcoin transactions are subject to taxation. If you're trading Bitcoin as an individual, you may be subject to capital gains tax. The tax rate depends on your total income and can range from 18% to 32%. For businesses, Bitcoin transactions are treated as regular business income. It's important to keep records of all your Bitcoin transactions for tax purposes. The Polish tax authorities are becoming more familiar with cryptocurrency taxation, so it's advisable to consult with a tax professional.",
-    directPayments: "While Bitcoin is not widely accepted for direct payments in Poland, there are some businesses that accept it. You can find Bitcoin-accepting merchants on platforms like BTCMap. Some restaurants, cafes, and online stores in major cities like Warsaw and Krakow accept Bitcoin payments. The adoption is still limited, but it's growing slowly as more people become aware of Bitcoin's benefits.",
+    generalInfo: "The main currency in Poland is złoty (PLN or zł). Bitcoin adoption is quite low, nonetheless you can find several bars, restaurants, shops and services that take sats. Bitcoin payments are subject to capital gains tax which is 19%.",
+    taxation: "In Poland, the taxation of Bitcoin and other cryptocurrencies for investment purposes from the sale of Bitcoin are considered income and are subject to capital gains tax which is a flat tax rate of 19% on the realized gains.\n\nWhen using Bitcoin as a means of payment at a merchant, the transaction is treated as a barter transaction. In such cases, the value of the goods or services received in exchange for Bitcoin must be reported, and the tax is calculated based on the difference between the acquisition cost of the Bitcoin and its value at the time of the transaction.",
+    directPayments: "There's rather low Bitcoin adoption of merchants in Poland. You usually can find several businesses accepting Bitcoin in bigger cities.",
   },
   appCategories: [
+    {
+      title: "Direct payments",
+      apps: [
+        {
+          name: "BTCMap",
+          description: "Open source map of places accepting bitcoin around the world.",
+          url: "#",
+        },
+      ],
+    },
     {
       title: "Exchanges",
       apps: [
@@ -54,7 +68,7 @@ export const polandData: CountryData = {
       ],
     },
     {
-      title: "Fintech Apps",
+      title: "Fintech apps",
       apps: [
         {
           name: "Zen",
@@ -74,7 +88,7 @@ export const polandData: CountryData = {
       ],
     },
     {
-      title: "P2P Services",
+      title: "Peer-to-peer",
       apps: [
         {
           name: "BitBlik",
@@ -93,13 +107,13 @@ export const polandData: CountryData = {
         },
         {
           name: "Peach Bitcoin",
-          description: "Swiss-based mobile app that offers P2P trading with EUR.",
+          description: "Swiss-based mobile app that offers P2P trading with EUR",
           url: "#",
         },
       ],
     },
     {
-      title: "ATMs & Exchanges",
+      title: "ATMs & currency exchanges",
       apps: [
         {
           name: "Quark",
