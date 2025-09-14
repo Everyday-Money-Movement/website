@@ -22,9 +22,6 @@ export default function LivePage() {
               <p className="text-muted-foreground text-base lg:text-lg" aria-description="page description">
                 Get to know how can you live and travel using bitcoin as money. Read our general guide or find your country
               </p>
-              <p className="text-xs text-muted-foreground/70 mt-2">
-                Note: Map boundaries are for reference only. Some territories may be disputed.
-              </p>
             </div>
             
             {/* Client Component for Interactive Elements */}
