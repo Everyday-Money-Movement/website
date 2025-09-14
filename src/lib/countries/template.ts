@@ -65,3 +65,4 @@ export const templateData: CountryData = {
 // 3. Export the data with a descriptive name (e.g., export const germanyData = ...)
 // 4. Import the new data in countries/index.ts
 // 5. Add the country to the countryDataRegistry object
+

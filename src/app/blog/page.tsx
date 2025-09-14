@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { allBlogs } from "contentlayer/generated";
+import { BlogSection3 } from "@/components/pro-blocks/landing-page/blog-sections/blog-section-3";
 
 export const metadata = {
   title: "Blog",
+  description: "Read our latest articles about Bitcoin, everyday money, and living on Bitcoin",
 };
 
 export default function BlogPage() {
@@ -10,21 +11,5 @@ export default function BlogPage() {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
-  return (
-    <section className="prose dark:prose-invert max-w-none">
-      <h1>Blog</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/blog/${post.slug}`} className="font-semibold">
-              {post.title}
-            </Link>
-            <p className="m-0 text-sm text-muted-foreground">
-              {post.description}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
+  return <BlogSection3 />;
 }

@@ -83,7 +83,7 @@ export function Navbar1() {
         <Link href="/spedn-wall" className={getLinkClasses("/spedn-wall")}>
           SPEDN Wall
         </Link>
-        <Link href="#" className={getLinkClasses("#")}>
+        <Link href="/blog" className={getLinkClasses("/blog")}>
           Blog
         </Link>
         <Link href="#" className={getLinkClasses("#")}>
