@@ -41,7 +41,7 @@ export function LivePageClient({ countries }: LivePageClientProps) {
         onClick={() => router.push('/live/us')} 
         className="w-full sm:w-auto"
       >
-        See Live on Bitcoin Guide
+        General Guide
       </Button>
       
       {/* Search Component */}

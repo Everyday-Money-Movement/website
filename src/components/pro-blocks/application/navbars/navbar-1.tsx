@@ -4,10 +4,12 @@ import { Logo } from "@/components/pro-blocks/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export function Navbar1() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -54,37 +56,34 @@ export function Navbar1() {
 
   // Navigation items component
   const NavItems = ({ isMobile = false }) => {
-
-    const linkClasses = `font-medium ${isMobile ? "text-base" : "text-sm"} ${
-      isMobile
-        ? "text-muted-foreground"
-        : "text-muted-foreground hover:bg-primary/5"
-    } px-3 py-2 rounded-md`;
+    const getLinkClasses = (href: string) => {
+      const isActive = pathname === href;
+      const baseClasses = `font-medium ${isMobile ? "text-base" : "text-sm"} px-3 py-2 rounded-md`;
+      const activeClasses = isActive ? "text-primary" : "text-muted-foreground";
+      const hoverClasses = isMobile ? "" : "hover:bg-primary/5";
+      
+      return `${baseClasses} ${activeClasses} ${hoverClasses}`;
+    };
 
     return (
       <>
         {/* Main navigation links */}
-        <Link
-          href="/"
-          className={`${linkClasses} ${
-            isMobile ? "text-primary" : "text-primary"
-          }`}
-        >
+        <Link href="/" className={getLinkClasses("/")}>
           Manifesto
         </Link>
-        <Link href="/medium-of-exchange" className={linkClasses}>
+        <Link href="/medium-of-exchange" className={getLinkClasses("/medium-of-exchange")}>
           Medium of Exchange
         </Link>
-        <Link href="/live" className={linkClasses}>
+        <Link href="/live" className={getLinkClasses("/live")}>
           Live on Bitcoin
         </Link>
-        <Link href="/spedn-wall" className={linkClasses}>
+        <Link href="/spedn-wall" className={getLinkClasses("/spedn-wall")}>
           SPEDN Wall
         </Link>
-        <Link href="#" className={linkClasses}>
+        <Link href="#" className={getLinkClasses("#")}>
           Blog
         </Link>
-        <Link href="#" className={linkClasses}>
+        <Link href="#" className={getLinkClasses("#")}>
           Contribute
         </Link>
       </>

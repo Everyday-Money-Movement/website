@@ -22,7 +22,7 @@ export default function LivePage() {
                 Live on Bitcoin
               </h1>
               <p className="text-muted-foreground text-base lg:text-lg" aria-description="page description">
-                Explore countries where Bitcoin is legal tender or widely adopted. Discover how people around the world are living on Bitcoin.
+                Get to know how can you live and travel using bitcoin as money. Read our general guide or find your country
               </p>
             </div>
             
