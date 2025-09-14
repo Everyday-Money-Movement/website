@@ -36,10 +36,10 @@ export function LivePageClient({ countries }: LivePageClientProps) {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-md">
+    <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg">
       <Button 
         onClick={() => router.push('/live/us')} 
-        className="w-full sm:w-40"
+        className="w-full sm:w-64"
       >
         General Guide
       </Button>
@@ -51,7 +51,7 @@ export function LivePageClient({ countries }: LivePageClientProps) {
             variant="outline"
             role="combobox"
             aria-expanded={searchOpen}
-            className="w-full sm:w-40 justify-between"
+            className="w-full sm:w-64 justify-between"
           >
             <Search className="mr-2 h-4 w-4" />
             {searchValue ? searchValue : "Search countries..."}

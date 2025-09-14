@@ -64,20 +64,20 @@ export function WorldMap() {
                   }}
                   style={{
                     default: {
-                      fill: hasData ? "hsl(var(--muted))" : "hsl(var(--muted) / 0.5)",
-                      stroke: "hsl(var(--border))",
+                      fill: hasData ? "#E5E7EB" : "#F3F4F6",
+                      stroke: "#9CA3AF",
                       strokeWidth: 0.5,
                       outline: "none",
                     },
                     hover: {
-                      fill: hasData ? "hsl(var(--muted) / 0.8)" : "hsl(var(--muted) / 0.7)",
-                      stroke: "hsl(var(--border) / 0.8)",
+                      fill: hasData ? "#D1D5DB" : "#E5E7EB",
+                      stroke: "#6B7280",
                       strokeWidth: 1,
                       cursor: "pointer",
                     },
                     pressed: {
-                      fill: hasData ? "hsl(var(--muted) / 0.6)" : "hsl(var(--muted) / 0.8)",
-                      stroke: "hsl(var(--border) / 0.8)",
+                      fill: hasData ? "#9CA3AF" : "#D1D5DB",
+                      stroke: "#6B7280",
                       strokeWidth: 1,
                       outline: "none",
                     },
