@@ -1,14 +1,12 @@
 import WorldMap from "@/components/map/WorldMap";
-import { getCountryCodes } from "@/lib/content";
 import { ISO2_TO_NAME } from "@/lib/iso";
 import { LivePageClient } from "./live-page-client";
 
 export default function LivePage() {
-  const codes = getCountryCodes();
-
-  const countries = codes.map(code => ({
+  // Get all countries from ISO mapping for search
+  const countries = Object.entries(ISO2_TO_NAME).map(([code, name]) => ({
     code,
-    name: ISO2_TO_NAME[code] || code
+    name
   }));
 
   return (

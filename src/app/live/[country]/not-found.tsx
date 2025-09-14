@@ -2,8 +2,28 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, MapPin, Github } from "lucide-react";
+import { ISO2_TO_NAME } from "@/lib/iso";
 
-export default function CountryNotFound() {
+interface CountryNotFoundProps {
+  params: Promise<{ country: string }>;
+}
+
+export default async function CountryNotFound({ params }: CountryNotFoundProps) {
+  const { country } = await params;
+  
+  // Try to get the country name from the parameter
+  let countryName = country;
+  
+  // If it's an ISO code, get the full name
+  if (country.length === 2) {
+    countryName = ISO2_TO_NAME[country.toUpperCase()] || country;
+  } else {
+    // If it's a URL-friendly name, convert it back
+    countryName = country
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
   return (
     <div className="container mx-auto py-16 px-4">
       <div className="max-w-2xl mx-auto text-center">
@@ -12,15 +32,15 @@ export default function CountryNotFound() {
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
               <MapPin className="h-8 w-8 text-muted-foreground" />
             </div>
-            <CardTitle className="text-2xl">Country Guide Not Found</CardTitle>
+            <CardTitle className="text-2xl">Guide for {countryName} Not Found</CardTitle>
             <CardDescription className="text-lg">
-              We don't have a Bitcoin guide for this country yet, but we'd love to add one!
+              We don't have a Bitcoin guide for {countryName} yet, but we'd love to add one!
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <p className="text-muted-foreground">
               Our community is constantly working to add more countries to help people live on Bitcoin around the world. 
-              If you have knowledge about Bitcoin adoption in this country, we'd appreciate your contribution.
+              If you have knowledge about Bitcoin adoption in {countryName}, we'd appreciate your contribution.
             </p>
             
             <div className="space-y-4">
