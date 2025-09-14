@@ -1,5 +1,5 @@
-import { RichTextSection1 } from "@/components/pro-blocks/landing-page/rich-text-sections/rich-text-section-1";
+import { ManifestoSection } from "@/components/manifesto-section";
 
 export default function Home() {
-  return <RichTextSection1 />;
+  return <ManifestoSection />;
 }

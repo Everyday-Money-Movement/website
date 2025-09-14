@@ -43,7 +43,7 @@ export function Footer3() {
               Live on Bitcoin
             </Link>
             <Link
-              href="#"
+              href="/spedn-wall"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               SPEDN Wall

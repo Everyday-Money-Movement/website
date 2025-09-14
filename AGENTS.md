@@ -43,3 +43,18 @@
   _Example:_
   ```ts
   export { Footer3 as ProFooter3 } from "@everydaymoney/pro-blocks";
+  ```
+
+---
+
+## 3) Design-to-Code via Figma Plugin
+
+- When using **Figma → shadcn/ui plugin**, always:
+  1. Generate component code via plugin (matching your Figma component).  
+  2. Create or update shadcn/ui component under `components/ui/` or `components/custom/`.  
+  3. If it duplicates a Pro Blocks component, prefer the Pro Block + wrapper instead.  
+  4. Export any new design tokens (colors, radii, font sizes) and paste into `globals.css` or via `shadcn/ui CLI`.  
+  5. Write wrapper if needed (if you want to standardize props).  
+- Agents must not copy Pro Blocks internal code when plugin output overlaps; wrappers must refer to Pro Blocks when possible.  
+- Ensure the plugin output respects accessibility: alt/text, semantic HTML, aria attributes.  
+- Plugin output should match Tailwind v4 tokens, theme light/dark (if used).

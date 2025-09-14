@@ -1,5 +1,5 @@
-import { RichTextSection4 } from "@/components/pro-blocks/landing-page/rich-text-sections/rich-text-section-4";
+import { MediumOfExchangeSection } from "@/components/medium-of-exchange-section";
 
 export default function MediumOfExchangePage() {
-  return <RichTextSection4 />;
+  return <MediumOfExchangeSection />;
 }

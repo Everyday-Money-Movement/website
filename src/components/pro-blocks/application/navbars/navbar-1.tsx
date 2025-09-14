@@ -1,16 +1,8 @@
 "use client";
 
 import { Logo } from "@/components/pro-blocks/logo";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
-import { Menu, Zap, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -53,14 +45,9 @@ export function Navbar1() {
         <Logo className="h-8 w-8" />
       </Link>
 
-      {/* Mobile search and button */}
-      <div className="absolute right-4 flex items-center gap-3">
-        <Button variant="ghost" className="h-9 w-9 p-0 [&_svg]:size-5">
-          <Search className="text-muted-foreground" />
-        </Button>
-        <Button className="h-9 w-9 p-0 [&_svg]:size-5">
-          <Zap />
-        </Button>
+      {/* Mobile menu toggle area */}
+      <div className="absolute right-4 flex items-center">
+        {/* Empty space for balance */}
       </div>
     </div>
   );
@@ -91,7 +78,7 @@ export function Navbar1() {
         <Link href="/live" className={linkClasses}>
           Live on Bitcoin
         </Link>
-        <Link href="#" className={linkClasses}>
+        <Link href="/spedn-wall" className={linkClasses}>
           SPEDN Wall
         </Link>
         <Link href="#" className={linkClasses}>
@@ -109,43 +96,15 @@ export function Navbar1() {
       {/* Desktop Navbar */}
       <nav className="border-border bg-background hidden h-16 border-b shadow-sm lg:block">
         <div className="container mx-auto flex h-full items-center justify-between px-6">
-          {/* Left section: Logo and navigation items */}
-          <div className="flex items-center gap-x-4">
+          {/* Left section: Logo */}
+          <div className="flex items-center">
             <Link href="/">
               <Logo />
             </Link>
-            <div className="flex items-center gap-x-1">
-              <NavItems />
-            </div>
           </div>
-          {/* Right section: Search, user menu, and new item button */}
-          <div className="flex items-center space-x-4">
-            {/* Search button */}
-            <Button variant="ghost" size="icon">
-              <Search className="text-muted-foreground h-5 w-5" />
-            </Button>
-            {/* User menu dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Avatar className="cursor-pointer">
-                  <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="@shadcn"
-                  />
-                </Avatar>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>My Profile</DropdownMenuItem>
-                <DropdownMenuItem>Account</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <Separator className="my-1" />
-                <DropdownMenuItem>Sign Out</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            {/* New item button */}
-            <Button>
-              <Zap className="h-4 w-4" /> Upgrade
-            </Button>
+          {/* Right section: Navigation items */}
+          <div className="flex items-center gap-x-1">
+            <NavItems />
           </div>
         </div>
       </nav>
