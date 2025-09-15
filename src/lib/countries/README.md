@@ -72,3 +72,4 @@ You can create custom categories for each country. Common categories include:
 - Use high-quality images from Unsplash or similar services
 - Test the page after adding new data to ensure everything renders correctly
 
+

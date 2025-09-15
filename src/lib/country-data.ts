@@ -28,3 +28,4 @@ export interface CountryData {
   appCategories: AppCategory[];
 }
 
+
