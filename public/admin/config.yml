@@ -1,21 +1,65 @@
 backend:
   name: github
-  repo: Everyday-Money-Movement/website
   branch: main
-  auth_scope: repo
-media_folder: public/images/uploads
-public_folder: /images/uploads
+  repo: Everyday-Money-Movement/website
+  base_url: https://YOUR_OAUTH_PROXY.example.com
+  auth_endpoint: /api/auth
+
+local_backend: true
+
+site_url: https://your-site.example.com
+display_url: https://your-site.example.com
+logo_url: /favicon.svg
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
-    format: frontmatter
-    extension: mdx
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{slug}}/index"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "auto-generated; do not change", pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "lower-kebab only"], required: true }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - label: "Cover"
+        name: "cover"
+        widget: "object"
+        fields:
+          - { label: "Image", name: "src", widget: "image", media_library: { config: { multiple: false } } }
+          - { label: "Alt", name: "alt", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        value_field: "slug"
+        search_fields: ["name", "slug"]
+        display_fields: ["name"]
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown", hint: "Use shortcodes for special blocks" }
+
+  - name: "authors"
+    label: "Authors"
+    folder: "content/authors"
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: title, label: Title, widget: string }
-      - { name: description, label: Description, widget: text }
-      - { name: date, label: Date, widget: datetime }
-      - { name: author, label: Author, widget: string }
-      - { name: body, label: Body, widget: markdown }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Avatar", name: "avatar", widget: "image", required: false }
+      - { label: "Bio", name: "bio", widget: "text", required: false }
+      - label: "Links"
+        name: "links"
+        widget: "object"
+        fields:
+          - { label: "Website", name: "website", widget: "string", required: false }
+          - { label: "Twitter", name: "twitter", widget: "string", required: false }
+          - { label: "Nostr", name: "nostr", widget: "string", required: false }

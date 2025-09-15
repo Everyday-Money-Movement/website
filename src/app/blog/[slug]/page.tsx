@@ -1,40 +1,29 @@
-import { allBlogs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
+import { draftMode } from "next/headers";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { RichTextSection1 } from "@/components/pro-blocks/landing-page/rich-text-sections/rich-text-section-1";
+import { Callout, Quote } from "@/components/shortcodes";
 
 export async function generateStaticParams() {
-  return allBlogs.map((post) => ({ slug: post.slug }));
+  const posts = await getAllPosts();
+  return posts.filter((p) => !p.draft).map((p) => ({ slug: p.slug }));
 }
 
-export default async function BlogPostPage({
+export default async function PostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = allBlogs.find((p) => p.slug === slug);
-  if (!post) notFound();
-
-  // Format date for display
-  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
-
+  const { isEnabled } = await draftMode();
+  const post = await getPostBySlug(slug);
+  if (!post || (!isEnabled && post.draft)) {
+    notFound();
+  }
   return (
-    <RichTextSection1
-      title={post.title}
-      subtitle={post.description}
-      date={formattedDate}
-      category="Blog"
-      authorName={post.author || "Author"}
-      authorImage="https://github.com/shadcn.png"
-    >
-      <div className="prose dark:prose-invert max-w-none">
-        <MDXRemote source={post.body.raw} />
-      </div>
-    </RichTextSection1>
+    <article className="prose mx-auto py-10">
+      <h1>{post.title}</h1>
+      <MDXRemote source={post.content} components={{ Callout, Quote }} />
+    </article>
   );
 }
