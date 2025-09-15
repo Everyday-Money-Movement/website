@@ -38,7 +38,7 @@ export function LivePageClient({ countries }: LivePageClientProps) {
   return (
     <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg">
       <Button 
-        onClick={() => router.push('/live/us')} 
+        onClick={() => router.push('/live/guide')} 
         className="w-full sm:w-64"
       >
         General Guide

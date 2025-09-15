@@ -1,1 +1,62 @@
 /* Tailwind preview styles injected into Decap preview pane */
+
+/* Basic preview styles for Decap CMS */
+.cms-preview {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.cms-preview h1,
+.cms-preview h2,
+.cms-preview h3,
+.cms-preview h4,
+.cms-preview h5,
+.cms-preview h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.cms-preview h1 { font-size: 2em; }
+.cms-preview h2 { font-size: 1.5em; }
+.cms-preview h3 { font-size: 1.25em; }
+
+.cms-preview p {
+  margin-bottom: 1em;
+}
+
+.cms-preview ul,
+.cms-preview ol {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+.cms-preview blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 4px solid #e2e8f0;
+  color: #64748b;
+}
+
+.cms-preview code {
+  background-color: #f1f5f9;
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.875em;
+}
+
+.cms-preview pre {
+  background-color: #f1f5f9;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.cms-preview pre code {
+  background: none;
+  padding: 0;
+}
