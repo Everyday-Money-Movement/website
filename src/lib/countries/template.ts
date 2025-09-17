@@ -67,3 +67,4 @@ export const templateData: CountryData = {
 // 5. Add the country to the countryDataRegistry object
 
 
+

@@ -1,5 +1,5 @@
-import { ManifestoSection } from "@/components/manifesto-section";
+import { HomePage } from "@/components/home-page";
 
 export default function Home() {
-  return <ManifestoSection />;
+  return <HomePage />;
 }

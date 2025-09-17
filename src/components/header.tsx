@@ -27,6 +27,9 @@ export function Header() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-x-1">
           <Link href="/" className={getLinkClasses("/")}>
+            Home
+          </Link>
+          <Link href="/manifesto" className={getLinkClasses("/manifesto")}>
             Manifesto
           </Link>
           <Link href="/medium-of-exchange" className={getLinkClasses("/medium-of-exchange")}>

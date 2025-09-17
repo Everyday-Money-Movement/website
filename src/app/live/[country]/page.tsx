@@ -6,6 +6,9 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import { ISO2_TO_NAME } from "@/lib/iso";
 import { CountryPageSection } from "@/components/country-page-section";
 import { getCountryData } from "@/lib/countries";
+import { CanadaPage } from "@/components/countries/canada-page";
+import { HongKongPage } from "@/components/countries/hong-kong-page";
+import { PolandPage } from "@/components/countries/poland-page";
 
 export async function generateMetadata({ params }: { params: Promise<{ country: string }> }): Promise<Metadata> {
   const { country } = await params;
@@ -43,6 +46,19 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
       // Use the formatted name as fallback
       name = countryName;
     }
+  }
+
+  // Check for specific country components first
+  if (code === "CA") {
+    return <CanadaPage />;
+  }
+  
+  if (code === "HK") {
+    return <HongKongPage />;
+  }
+  
+  if (code === "PL") {
+    return <PolandPage />;
   }
 
   // Check if we have structured data for this country

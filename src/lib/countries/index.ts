@@ -1,11 +1,15 @@
 import { CountryData } from "../country-data";
 import { polandData } from "./pl";
 import { usData } from "./us";
+import { canadaData } from "./ca";
+import { hongKongData } from "./hk";
 
 // Registry of all country data
 export const countryDataRegistry: Record<string, CountryData> = {
   PL: polandData,
   US: usData,
+  CA: canadaData,
+  HK: hongKongData,
   // Add more countries here as they're created
   // DE: germanyData,
   // etc.
